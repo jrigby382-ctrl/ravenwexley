@@ -8,98 +8,124 @@
         body {
             margin: 0;
             font-family: 'Segoe UI', sans-serif;
-            background: linear-gradient(135deg, #0a001f, #001f3d);
+            background-color: #000000;
             color: white;
             text-align: center;
             min-height: 100vh;
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(168, 85, 247, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 80% 70%, rgba(168, 85, 247, 0.06) 0%, transparent 40%),
+                url("data:image/svg+xml,%3Csvg width='200' height='200' viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M100 10 L105 40 L130 25 L115 50 L145 55 L120 70 L150 90 L115 85 L130 115 L100 95 L70 115 L85 85 L50 90 L80 70 L55 55 L85 50 L70 25 L95 40 Z' fill='none' stroke='%23a855f7' stroke-width='1.2' opacity='0.25'/%3E%3Cpath d='M100 100 L100 190 M100 100 L20 160 M100 100 L180 160 M100 100 L30 50 M100 100 L170 50' stroke='%23a855f7' stroke-width='0.8' opacity='0.2'/%3E%3C/svg%3E");
+            background-size: 280px 280px;
         }
+
         .container {
             max-width: 420px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 20px 16px 40px;
         }
+
         .profile-pic {
-            width: 100%;
-            max-height: 420px;
+            width: 160px;
+            height: 160px;
             object-fit: cover;
-            border-bottom: 5px solid #c026d3;
+            border-radius: 50%;
+            border: 3px solid #a855f7;
+            box-shadow: 0 0 25px rgba(168, 85, 247, 0.6);
+            margin-top: 10px;
         }
+
         h1 {
-            margin: 20px 0 8px;
-            font-size: 32px;
-            text-shadow: 0 0 15px #c026d3;
+            margin: 18px 0 6px;
+            font-size: 28px;
+            text-shadow: 0 0 18px #a855f7;
+            letter-spacing: 1px;
         }
+
         .verified {
-            background: #22c55e;
-            color: black;
-            font-size: 14px;
-            padding: 4px 12px;
+            background: #a855f7;
+            color: white;
+            font-size: 13px;
+            padding: 3px 10px;
             border-radius: 9999px;
             display: inline-block;
+            margin-left: 6px;
+            box-shadow: 0 0 12px rgba(168, 85, 247, 0.7);
         }
+
         p {
-            opacity: 0.9;
-            line-height: 1.6;
-            margin: 16px 0 30px;
+            opacity: 0.85;
+            line-height: 1.5;
+            margin: 12px 0 28px;
+            font-size: 15px;
         }
+
         .big-btn {
             display: block;
-            background: linear-gradient(90deg, #c026d3, #3b82f6);
+            background: linear-gradient(90deg, #7e22ce, #a855f7);
             color: white;
-            padding: 25px 20px;
-            margin: 25px auto;
-            border-radius: 20px;
+            padding: 18px 20px;
+            margin: 16px auto;
+            border-radius: 16px;
             text-decoration: none;
             font-weight: bold;
-            font-size: 20px;
-            box-shadow: 0 0 35px #c026d3;
-            position: relative;
-            overflow: hidden;
+            font-size: 17px;
+            box-shadow: 0 0 28px rgba(168, 85, 247, 0.55);
+            border: 1px solid rgba(168, 85, 247, 0.4);
+            transition: 0.2s;
         }
-        .btn-image {
+
+        .big-btn:hover {
+            box-shadow: 0 0 40px rgba(168, 85, 247, 0.85);
+            transform: scale(1.02);
+        }
+
+        .bottom-pics {
+            margin-top: 35px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .bottom-pics img {
             width: 100%;
-            height: 180px;
-            object-fit: cover;
-            border-radius: 15px;
-            margin-bottom: 12px;
+            border-radius: 12px;
+            border: 1px solid rgba(168, 85, 247, 0.35);
+            box-shadow: 0 0 15px rgba(168, 85, 247, 0.25);
+            cursor: pointer;
+            transition: 0.2s;
         }
-        .btn-text {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: rgba(0,0,0,0.7);
-            padding: 8px 20px;
-            border-radius: 9999px;
-            font-size: 18px;
+
+        .bottom-pics img:hover {
+            box-shadow: 0 0 25px rgba(168, 85, 247, 0.6);
+            transform: scale(1.03);
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- BIG PROFILE PICTURE -->
-        <img src="https://i.imgur.com/skQqplc.jpeg" alt="Raven Wexley" class="profile-pic">
+        <!-- Smaller profile picture -->
+        <img src="https://i.imgur.com/Cbk993W.jpeg" alt="Raven Wexley" class="profile-pic">
         
         <h1>Raven Wexley <span class="verified">✓</span></h1>
-        <p>20 • alt college girl 🖤 click to see more ;)</p>
+        <p>20 • soft alt girl with a dark side 🖤</p>
         
-        <!-- BIG FANVUE BUTTON WITH PICTURE -->
-        <a href="https://fanvue.com/ravenwexley" class="big-btn">
-            <img src="https://i.imgur.com/03X3qJu.jpeg" class="btn-image" alt="Raven">
-            <div class="btn-text">✨free exclusive✨</div>
+        <!-- Fanvue Button -->
+        <a href="https://www.fanvue.com/ravenwexleyxo" class="big-btn">
+            ✨ Free Exclusive Content ✨
         </a>
         
         <!-- Instagram Button -->
-        <a href="https://instagram.com/ravenwexley" class="big-btn">Instagram</a>
+        <a href="https://www.instagram.com/ravenwexleyxo" class="big-btn">
+            Instagram
+        </a>
         
-        <!-- Threads Button -->
-        <a href="https://www.threads.com/@ravenwexley" class="big-btn">Threads</a>
-        
-        <!-- Bottom 3 Pictures Area -->
-        <div style="margin-top: 40px; display: flex; justify-content: center; gap: 10px;">
-            <img src="https://i.imgur.com/JXm45qX.png" style="width: 30%; border-radius: 12px;" alt="Raven">
-            <img src="https://i.imgur.com/YR91IYS.png" style="width: 30%; border-radius: 12px;" alt="Raven">
-            <img src="https://i.imgur.com/CN7TYjG.jpeg" style="width: 30%; border-radius: 12px;" alt="Raven">
+        <!-- 4 Bottom Pictures -->
+        <div class="bottom-pics">
+            <img src="https://i.imgur.com/TFiGQ1r.jpeg" alt="Raven">
+            <img src="https://i.imgur.com/G31Az8Y.jpeg" alt="Raven">
+            <img src="https://i.imgur.com/uQbWKle.jpeg" alt="Raven">
+            <img src="https://i.imgur.com/AOBvbjq.jpeg" alt="Raven">
         </div>
     </div>
 </body>
