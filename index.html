@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Raven Wexley</title>
+    
+    <!-- Gothic Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
+
     <style>
         body {
             margin: 0;
@@ -12,7 +16,7 @@
             color: white;
             text-align: center;
             min-height: 100vh;
-            background-image: url("https://i.imgur.com/NTI8b2f.png");
+            background-image: url("https://i.imgur.com/93J93Si.png");
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -38,19 +42,34 @@
         h1 {
             margin: 18px 0 6px;
             font-size: 28px;
+            font-family: 'Cinzel Decorative', cursive;
             text-shadow: 0 0 18px #a855f7;
             letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
         }
 
+        /* Instagram-style blue verified badge */
         .verified {
-            background: #a855f7;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 22px;
+            height: 22px;
+            background: #1DA1F2;
+            border-radius: 50%;
+            position: relative;
+            box-shadow: 0 0 10px rgba(29, 161, 242, 0.6);
+        }
+
+        .verified::after {
+            content: "✓";
             color: white;
-            font-size: 13px;
-            padding: 3px 10px;
-            border-radius: 9999px;
-            display: inline-block;
-            margin-left: 6px;
-            box-shadow: 0 0 12px rgba(168, 85, 247, 0.7);
+            font-size: 14px;
+            font-weight: bold;
+            line-height: 1;
         }
 
         p {
@@ -101,6 +120,29 @@
             box-shadow: 0 0 25px rgba(168, 85, 247, 0.6);
             transform: scale(1.03);
         }
+
+        /* Lightbox */
+        #lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.92);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        #lightbox img {
+            max-width: 92%;
+            max-height: 88%;
+            border-radius: 12px;
+            box-shadow: 0 0 40px rgba(168, 85, 247, 0.5);
+            border: 2px solid rgba(168, 85, 247, 0.4);
+        }
     </style>
 </head>
 <body>
@@ -108,7 +150,11 @@
     <div class="container">
         <img src="https://i.imgur.com/G57Ln0Z.jpeg" alt="Raven Wexley" class="profile-pic">
         
-        <h1>Raven Wexley <span class="verified">✓</span></h1>
+        <h1>
+            Raven Wexley 
+            <span class="verified"></span>
+        </h1>
+        
         <p>20 • soft alt girl with a dark side 🖤</p>
         
         <a href="https://www.fanvue.com/ravenwexleyxo" class="big-btn">
@@ -120,15 +166,28 @@
         </a>
         
         <div class="bottom-pics">
-            <img src="https://i.imgur.com/TFiGQ1r.jpeg" alt="Raven">
-            <img src="https://i.imgur.com/G31Az8Y.jpeg" alt="Raven">
-            <img src="https://i.imgur.com/uQbWKle.jpeg" alt="Raven">
-            <img src="https://i.imgur.com/AOBvbjq.jpeg" alt="Raven">
+            <img src="https://i.imgur.com/TFiGQ1r.jpeg" alt="Raven" onclick="openLightbox(this.src)">
+            <img src="https://i.imgur.com/G31Az8Y.jpeg" alt="Raven" onclick="openLightbox(this.src)">
+            <img src="https://i.imgur.com/uQbWKle.jpeg" alt="Raven" onclick="openLightbox(this.src)">
+            <img src="https://i.imgur.com/AOBvbjq.jpeg" alt="Raven" onclick="openLightbox(this.src)">
         </div>
     </div>
 
-</body>
-</html>
+    <!-- Lightbox -->
+    <div id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Expanded">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            document.getElementById('lightbox-img').src = src;
+            document.getElementById('lightbox').style.display = 'flex';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+    </script>
 
 </body>
 </html>
