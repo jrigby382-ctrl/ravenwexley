@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Raven Wexley</title>
     
-    <!-- Gothic Font -->
     <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
 
     <style>
@@ -16,14 +15,73 @@
             color: white;
             text-align: center;
             min-height: 100vh;
-            background-image: url("https://i.imgur.com/O69Fw6a.png");
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Decorative edge webs & hearts */
+        .bg-decor {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.35;
+        }
+
+        .bg-decor svg {
+            position: absolute;
+        }
+
+        /* Top left web */
+        .web-tl {
+            top: -40px;
+            left: -60px;
+            width: 280px;
+            height: 280px;
+        }
+
+        /* Top right web */
+        .web-tr {
+            top: -50px;
+            right: -70px;
+            width: 260px;
+            height: 260px;
+            transform: scaleX(-1);
+        }
+
+        /* Bottom left web */
+        .web-bl {
+            bottom: -60px;
+            left: -50px;
+            width: 240px;
+            height: 240px;
+            transform: scaleY(-1);
+        }
+
+        /* Bottom right web */
+        .web-br {
+            bottom: -40px;
+            right: -60px;
+            width: 270px;
+            height: 270px;
+            transform: scale(-1);
+        }
+
+        /* Floating hearts */
+        .heart {
+            position: absolute;
+            fill: none;
+            stroke: white;
+            stroke-width: 1.8;
+            opacity: 0.5;
         }
 
         .container {
+            position: relative;
+            z-index: 1;
             max-width: 420px;
             margin: 0 auto;
             padding: 20px 16px 40px;
@@ -51,7 +109,6 @@
             gap: 8px;
         }
 
-        /* Instagram-style blue verified badge */
         .verified {
             display: inline-flex;
             align-items: center;
@@ -60,7 +117,6 @@
             height: 22px;
             background: #1DA1F2;
             border-radius: 50%;
-            position: relative;
             box-shadow: 0 0 10px rgba(29, 161, 242, 0.6);
         }
 
@@ -92,7 +148,6 @@
             box-shadow: 0 0 28px rgba(168, 85, 247, 0.55);
             border: 1px solid rgba(168, 85, 247, 0.4);
             transition: 0.2s;
-            cursor: pointer;
         }
 
         .big-btn:hover {
@@ -147,6 +202,55 @@
 </head>
 <body>
 
+    <!-- Decorative spiderwebs + hearts (edges only) -->
+    <div class="bg-decor">
+        <!-- Top Left Web -->
+        <svg class="web-tl" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M100 100 L20 20 M100 100 L180 20 M100 100 L20 180 M100 100 L180 180 M100 100 L100 10 M100 100 L100 190 M100 100 L10 100 M100 100 L190 100" stroke="white" stroke-width="1.2"/>
+            <path d="M100 100 Q60 60 40 40 M100 100 Q140 60 160 40 M100 100 Q60 140 40 160 M100 100 Q140 140 160 160" stroke="white" stroke-width="1"/>
+            <circle cx="100" cy="100" r="8" stroke="white" stroke-width="1.5"/>
+            <path d="M70 50 Q85 35 100 50 Q115 35 130 50" stroke="white" stroke-width="1.3" fill="none"/>
+        </svg>
+
+        <!-- Top Right Web -->
+        <svg class="web-tr" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M100 100 L20 20 M100 100 L180 20 M100 100 L20 180 M100 100 L180 180 M100 100 L100 10 M100 100 L100 190 M100 100 L10 100 M100 100 L190 100" stroke="white" stroke-width="1.2"/>
+            <path d="M100 100 Q60 60 40 40 M100 100 Q140 60 160 40 M100 100 Q60 140 40 160 M100 100 Q140 140 160 160" stroke="white" stroke-width="1"/>
+            <circle cx="100" cy="100" r="8" stroke="white" stroke-width="1.5"/>
+        </svg>
+
+        <!-- Bottom Left Web -->
+        <svg class="web-bl" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M100 100 L20 20 M100 100 L180 20 M100 100 L20 180 M100 100 L180 180 M100 100 L100 10 M100 100 L100 190 M100 100 L10 100 M100 100 L190 100" stroke="white" stroke-width="1.2"/>
+            <path d="M100 100 Q60 60 40 40 M100 100 Q140 60 160 40 M100 100 Q60 140 40 160 M100 100 Q140 140 160 160" stroke="white" stroke-width="1"/>
+            <circle cx="100" cy="100" r="8" stroke="white" stroke-width="1.5"/>
+        </svg>
+
+        <!-- Bottom Right Web -->
+        <svg class="web-br" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M100 100 L20 20 M100 100 L180 20 M100 100 L20 180 M100 100 L180 180 M100 100 L100 10 M100 100 L100 190 M100 100 L10 100 M100 100 L190 100" stroke="white" stroke-width="1.2"/>
+            <path d="M100 100 Q60 60 40 40 M100 100 Q140 60 160 40 M100 100 Q60 140 40 160 M100 100 Q140 140 160 160" stroke="white" stroke-width="1"/>
+            <circle cx="100" cy="100" r="8" stroke="white" stroke-width="1.5"/>
+        </svg>
+
+        <!-- Floating hearts -->
+        <svg class="heart" style="top: 12%; left: 8%; width: 38px;" viewBox="0 0 24 24">
+            <path d="M12 21s-6-4.35-9-8.5C1 9 3.5 5 7 5c2 0 3.5 1.5 5 3.5C13.5 6.5 15 5 17 5c3.5 0 6 4 4 7.5-3 4.15-9 8.5-9 8.5z" stroke="white" fill="none"/>
+        </svg>
+
+        <svg class="heart" style="top: 18%; right: 10%; width: 28px;" viewBox="0 0 24 24">
+            <path d="M12 21s-6-4.35-9-8.5C1 9 3.5 5 7 5c2 0 3.5 1.5 5 3.5C13.5 6.5 15 5 17 5c3.5 0 6 4 4 7.5-3 4.15-9 8.5-9 8.5z" stroke="white" fill="none"/>
+        </svg>
+
+        <svg class="heart" style="bottom: 22%; left: 6%; width: 32px;" viewBox="0 0 24 24">
+            <path d="M12 21s-6-4.35-9-8.5C1 9 3.5 5 7 5c2 0 3.5 1.5 5 3.5C13.5 6.5 15 5 17 5c3.5 0 6 4 4 7.5-3 4.15-9 8.5-9 8.5z" stroke="white" fill="none"/>
+        </svg>
+
+        <svg class="heart" style="bottom: 15%; right: 8%; width: 36px;" viewBox="0 0 24 24">
+            <path d="M12 21s-6-4.35-9-8.5C1 9 3.5 5 7 5c2 0 3.5 1.5 5 3.5C13.5 6.5 15 5 17 5c3.5 0 6 4 4 7.5-3 4.15-9 8.5-9 8.5z" stroke="white" fill="none"/>
+        </svg>
+    </div>
+
     <div class="container">
         <img src="https://i.imgur.com/G57Ln0Z.jpeg" alt="Raven Wexley" class="profile-pic">
         
@@ -173,7 +277,6 @@
         </div>
     </div>
 
-    <!-- Lightbox -->
     <div id="lightbox" onclick="closeLightbox()">
         <img id="lightbox-img" src="" alt="Expanded">
     </div>
@@ -183,7 +286,6 @@
             document.getElementById('lightbox-img').src = src;
             document.getElementById('lightbox').style.display = 'flex';
         }
-
         function closeLightbox() {
             document.getElementById('lightbox').style.display = 'none';
         }
